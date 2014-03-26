@@ -1,7 +1,6 @@
 package assignment4;
 
-/**
-  * A stopwatch accumulates time when it is running. You can 
+/** A stopwatch accumulates time when it is running. You can 
   * repeatedly start and stop the stopwatch. You can use a
   * stopwatch to measure the running time of a program.
   *
@@ -22,45 +21,77 @@ public class StopWatch
 {
    // Data Fields
 
+   /** The value of the time since the last reset. 
+     */
    private long elapsedTime;
+
+   /** The value used as the initial clock reading, in milliseconds. 
+     */
    private long startTime;
+
+   /** Acts as a flag to indicate that the stopwatch is currently running.
+     */
    private boolean isRunning;
 
+   // Constants
+
+   /** There are currently no constants in the Stopwatch class.
+     */
+
+   // Constructors
+
+   /** Utilizing the default, zero-parameter constructor.
+     */
+
+   // Modifier Methods
+
+   /** None
+     */
+
+   // Access Methods
+
+   /** None
+     */
+
+   // Other Methods
+
+   /** Resets the stopwatch to zero milliseconds.
+     */
    public StopWatch()
-   {  
+   {
       reset();
    }
 
-   /**
-      Starts the stopwatch. Time starts accumulating now.
-   */
+   /** Starts the stopwatch. Time begins accumulating. Will not interfere with
+     * an already running stopwatch.
+     */
    public void start()
-   {  
-      if (isRunning) return;
+   {
+      if (isRunning) { return; }
+
       isRunning = true;
       startTime = System.currentTimeMillis();
    }
    
-   /**
-      Stops the stopwatch. Time stops accumulating and is
-      is added to the elapsed time.
-   */
+   /** Stops the stopwatch. Time stops accumulating and is added to the elapsed
+     * time.
+     */
    public void stop()
-   {  
-      if (!isRunning) return;
+   {
+      if (!isRunning) { return; }
+
       isRunning = false;
       long endTime = System.currentTimeMillis();
       elapsedTime = elapsedTime + endTime - startTime;
    }
    
-   /**
-      Returns the total elapsed time.
-      @return the total elapsed time
+   /** Returns the total elapsed time.
+     * @return the total elapsed time
    */
    public long getElapsedTime()
-   {  
+   {
       if (isRunning) 
-      {  
+      {
          long endTime = System.currentTimeMillis();
          return elapsedTime + endTime - startTime;
       }
@@ -68,11 +99,10 @@ public class StopWatch
          return elapsedTime;
    }
    
-   /**
-      Stops the watch and resets the elapsed time to 0.
-   */
+   /** Stops the watch and resets the elapsed time to 0.
+     */
    public void reset()
-   {  
+   {
       elapsedTime = 0;
       isRunning = false;
    }
