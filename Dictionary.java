@@ -1,18 +1,18 @@
 package assignment4;
 
-/** This class represents a Dictionary. 
-  * The purpose of this class is to create a word list from an input file to be
-  * used as a reference.
-  *
-  * @author K. Cyr, J. Ngo, S. Cooney, Kartik
-  */
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/** This class represents a Dictionary. 
+  * The purpose of this class is to create a word list from an input file to be
+  * used as a reference. This list must be searchable in a number of different
+  * ways as determined by its class methods.
+  *
+  * @author K. Cyr, J. Ngo, S. Cooney, K. Subramanian
+  */
 public class Dictionary 
 {
    // Data Fields
