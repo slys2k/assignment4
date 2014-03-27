@@ -43,17 +43,15 @@ public class solutionList
    // Access Methods
 
    /** Gets the current completion status of the word ladder.
-     * @return the value of firstDataField as a String
+     * @return The completion flag.
      */
-   public Sting getFirstDataField() { return firstDataField; }
+   public boolean getComplete() { return complete; }
 
-   /** Gets the value of secondDataField
-     * @return the value of secondDataField as an int
+   /** Gets the solutionList
+     * @return The entire solution list.
      */
-   public int getSecondDataField() { return secondDataField; }
+   public int getWordLadder() { return wordLadder; }
 
    // Other Methods
-
-   /* These are all other methods that do not fit in the GET and SET suite of
-    * Modifier and Access methods defined above
-    */
+   
+}
