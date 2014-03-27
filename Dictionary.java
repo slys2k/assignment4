@@ -105,7 +105,7 @@ public class Dictionary
      * @return Returns a a list of all the possibble one-off words from the
      *    dictionary.
      */
-   ArrayList public ArrayList<String> searchOneLetter(String word, int index)
+   public ArrayList<String> searchOneLetter(String word, int index)
    {
       ArrayList<String> solList = new ArrayList<String>();
       for(String s: dictionary)
