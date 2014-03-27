@@ -42,6 +42,10 @@ public class A4Driver
 
    /** This is the main method.
      */
+
+   //  # Process the Dictionary File --> File I/O in Dictionary
+      // pass Dictionary (args [1])
+      
    public static void main(String[] args) {
       Dictionary dict = new Dictionary();
       ArrayList<String> solList = new ArrayList<String>();
