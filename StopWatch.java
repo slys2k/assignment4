@@ -15,6 +15,8 @@ package assignment4;
   * timer.stop();
   * System.out.println("Elapsed time: " + timer.getElapsedTime() +
   *    " milliseconds");
+  *
+  * @author This class was provided to use with no author.
   */
 public class StopWatch
 {

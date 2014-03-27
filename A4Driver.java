@@ -15,17 +15,18 @@ import java.util.Iterator;
 public class A4Driver
 {
 /*########################REMOVE AFTER COMPLETING CODE##########################
- # main() algorithm:                         calls to class:                   #
- # Process the Dictionary File               File I/O in Dictionary            #
- # Loop:                                                                       #
- #    Get a Word Pair                        File I/O in A4Driver              #
- #    Check if Words are Valid               Dictionary                        #
- #       Invalid Throws Exception            A4Driver                          #
- #    Try to Find a Word Ladder              recursionMethod() in A4Driver     #
- #                                              creates solutionList Objects   #
- #                                              until it completes a ladder    #
- #       No Solution Throws Exception        A4Driver                          #
- #    Report the Word Ladder to Console      A4Driver                          #
+ # main() algorithm:                     #   calls to class:                   #
+ ###############################################################################
+ # Process the Dictionary File           #   File I/O in Dictionary            #
+ # Loop:                                 #                                     #
+ #    Get a Word Pair                    #   File I/O in A4Driver              #
+ #    Check if Words are Valid           #   Dictionary                        #
+ #       Invalid Throws Exception        #   A4Driver                          #
+ #    Try to Find a Word Ladder          #   recursionMethod() in A4Driver     #
+ #                                       #      creates solutionList Objects   #
+ #                                       #      until it completes a ladder    #
+ #       No Solution Throws Exception    #   A4Driver                          #
+ #    Report the Word Ladder to Console  #   A4Driver                          #
  #########################REMOVE AFTER COMPLETING CODE########################*/
    // Data Fields
 
@@ -62,7 +63,10 @@ public class A4Driver
       int x = 0;
    }
    
-   public static Integer MakeLadder(String fromWord, String toWord, Integer position){
+   public static Integer MakeLadder(String fromWord,
+                                    String toWord,
+                                    Integer position)
+   {
       Dictionary dict = new Dictionary();
       ArrayList<String> sol	= new ArrayList<String>(); // for ladder
       ArrayList<String> temp	= new ArrayList<String>(); // for candidates
