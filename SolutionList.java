@@ -12,85 +12,37 @@ public class solutionList
 
    /** The actual solution list. 
      */
-   private ArrayList<String> word_ladder;
-
-   /** The number of entries in the ladder. 
-     */
-   private int ladder_size;
+   private ArrayList<String> wordLadder;
 
    /** Flag gets set when the ladder is a complete solution. 
      */
-   private boolean ladder_size;
+   private boolean complete;
 
    // Constants
 
-   /** description of first constant 
-     */
-   private static final int FIRST_CONSTANT = 0;
-   /** description of second constant 
-     */
-   private static final int SECOND_CONSTANT = 0;
-
    // Constructors
 
-   /* Defining any constructors removes the default zero-parameter constructor,
-    * so if a zero-parameter constructor is still desired it must be defined 
-    * explicitly */
-   /** Construct a newClass with these two given values
-     * @param firstDataField Description of the first data field
-     * @param secondDataField Description of the second data field
+   /** Construct a solutionList with an empty ladder marked incomplete.
      */
-   public solutionList(String firstParam, int secondParam)
+   public solutionList()
    {
-      firstDataField = firstParam;
-      secondDataField = secondParam;
-   }
- 
-   /** Construct a newClass with this value specified
-     * @param firstDataField Description of the first data field
-     */
-   public newClass(String firstParam)
-   {
-      firstDataField = firstParam;
-   }
-
-   /** Construct a newClass with this value specified
-     * @param firstDataField Description of the first data field
-     */
-   public newClass(int secondParam)
-   {
-      secondDataField = secondParam;
-   }
-
-   /** Construct a newClass with default values
-     */
-   public newClass()
-   {
-      firstDataField = null;
-      secondDataField = 0;
+      ladder_size = 0;
+      complete = false;
    }
 
    // Modifier Methods
 
-   /** Sets the firstDataField field.
-     * @param firstParam 
+   /** Sets the complete flag.
+     * @param state The completion status of the word ladder 
      */
-   public void setFirstDataField(String firstParam)
+   public void setSecondDataField(boolean state)
    {
-      firstDataField = firstParam;
-   }
-
-   /** Sets the secondDataField field.
-     * @param secondParam 
-     */
-   public void setSecondDataField(int secondParam)
-   {
-      secondDataField = secondParam;
+      complete = state;
    }
 
    // Access Methods
 
-   /** Gets the value of firstDataField
+   /** Gets the current completion status of the word ladder.
      * @return the value of firstDataField as a String
      */
    public Sting getFirstDataField() { return firstDataField; }
