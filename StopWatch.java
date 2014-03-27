@@ -16,7 +16,6 @@ package assignment4;
   * System.out.println("Elapsed time: " + timer.getElapsedTime() +
   *    " milliseconds");
   */
-
 public class StopWatch
 {
    // Data Fields
