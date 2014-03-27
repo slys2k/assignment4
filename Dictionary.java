@@ -29,6 +29,8 @@ public class Dictionary
    // Constructors
 
    /** Construct a new Dictionary object.
+     * @param inFile The name of the file from which the dictionary should be 
+     *      made.
      */
    public Dictionary(String infile)
    {
@@ -38,7 +40,9 @@ public class Dictionary
 
    // Modifier Methods
 
-   /** Processes the dictionary file into a word list.
+   /** Processes the dictionary file into a word list. This method expects the
+     * first 5 characters of a line to be a five letter word. Any and all
+     * characters after the fifth character in each line is discarded.
      * @param inFile The name of the dictionary file being processed.
      */
    private void createDict(String inFile)
@@ -47,7 +51,7 @@ public class Dictionary
       {
          FileReader freader = new FileReader(inFile);
          BufferedReader reader = new BufferedReader(freader);
-         
+
          for (String s = reader.readLine(); s != null; s = reader.readLine()) 
          {
             if(!s.substring(0,1).equals("*"))
@@ -57,12 +61,16 @@ public class Dictionary
          }
          reader.close();
       } 
+      
+      // error detection: File Not Found
       catch (FileNotFoundException e) 
       {
          System.err.println ("Error: File not found. Exiting...");
          e.printStackTrace();
          System.exit(-1);
       } 
+      
+      // error detection: Unknown Cause
       catch (IOException e) 
       {
          System.err.println ("Error: IO exception. Exiting...");
@@ -73,9 +81,18 @@ public class Dictionary
 
    // Access Methods
 
-   /** None. The word list is not currently able to be modified outside of the
-     * the words provided in the word list processed from the input file.
+   /** Retrieves the dictionary entry for the supplied index.
+     * @param index The index of the element desired.
      */
+   public String getDictionaryElement(int index)
+   {
+	   if(index < dictionary.size())
+	   {
+	      String word = dictionary.get(index);
+	      return word;
+	   }
+	return null;
+   }
 
    // Other Methods
 

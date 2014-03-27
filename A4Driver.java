@@ -48,7 +48,7 @@ public class A4Driver
      */
    public static void main(String[] args) 
    {
-	  // check for both of the input files
+      // check for both of the input files
       if (args.length != 2)
       {
          System.err.println ("Error: Incorrect number of command line arguments");
@@ -56,12 +56,10 @@ public class A4Driver
       }
       
       // pass the dictionary filename to the Dictionary constructor
+      // this constructor processes the file with a private class method
       Dictionary Dictionary = new Dictionary(args[1]);
-
-      // create the dictionary
       
-      
- //  public static void main(String[] args) {
+/* //  public static void main(String[] args) {
       Dictionary dict = new Dictionary();
       ArrayList<String> solList = new ArrayList<String>();
       String word = "bakes";
@@ -130,5 +128,6 @@ public class A4Driver
       
       return 0;
    }
-
+*/
+}
 }
