@@ -17,13 +17,9 @@ public class Dictionary
 {
    // Data Fields
 
-   /** The name of the input file. 
-     */
-   String file;
-
    /** The word list generated from the input file. 
      */
-   ArrayList<String> dictionary;
+   protected ArrayList<String> dictionary;
 
    // Constants
 
@@ -34,9 +30,10 @@ public class Dictionary
 
    /** Construct a new Dictionary object.
      */
-   Dictionary()
+   public Dictionary(String infile)
    {
       dictionary = new ArrayList<String>();
+      createDict(infile);
    }
 
    // Modifier Methods
@@ -44,7 +41,7 @@ public class Dictionary
    /** Processes the dictionary file into a word list.
      * @param inFile The name of the dictionary file being processed.
      */
-   public void createDict(String inFile)
+   private void createDict(String inFile)
    {
       try 
       {

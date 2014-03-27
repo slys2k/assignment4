@@ -2,6 +2,10 @@ package assignment4;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 /** This class represents a Driver class that will find word ladders between a
   * given pair of words if possible. It will first process a file containing a
@@ -42,11 +46,22 @@ public class A4Driver
 
    /** This is the main method.
      */
-
-   //  # Process the Dictionary File --> File I/O in Dictionary
-      // pass Dictionary (args [1])
+   public static void main(String[] args) 
+   {
+	  // check for both of the input files
+      if (args.length != 2)
+      {
+         System.err.println ("Error: Incorrect number of command line arguments");
+         System.exit(-1);
+      }
       
-   public static void main(String[] args) {
+      // pass the dictionary filename to the Dictionary constructor
+      Dictionary Dictionary = new Dictionary(args[1]);
+
+      // create the dictionary
+      
+      
+ //  public static void main(String[] args) {
       Dictionary dict = new Dictionary();
       ArrayList<String> solList = new ArrayList<String>();
       String word = "bakes";
