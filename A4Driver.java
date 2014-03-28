@@ -48,6 +48,10 @@ public class A4Driver
      */
    public static void main(String[] args) 
    {
+      // start the stopwatch
+      StopWatch timer = new StopWatch();
+      timer.start();
+
       // check for both of the input files
       if (args.length != 2)
       {
@@ -70,8 +74,8 @@ public class A4Driver
          {
             // separate the first word pair into individual strings
             String[] WordPair = s.split("\\s+");
-            if(WordPair.length > 1)
-            {
+//            if(WordPair.length > 1)
+//            {
                String first = WordPair[0];
                String second = WordPair[1];
 
@@ -92,23 +96,24 @@ public class A4Driver
                      System.out.println("For the input words \"" + first + "\" "
                                         + "and " + "\"" + second + "\"\nThere "
                                         + "is no word ladder between \"" + first
-                                        + "\" and " + "\"" + second + "\".");
+                                        + "\" and " + "\"" + second + "\"!");
                   }
                }
                else // there are not two valid words
                {
+                  System.out.println("For the input words \"" + first + "\" "
+                                     + "and " + "\"" + second + "\"");
                   System.out.println("At least one of the words " + first
                                      + " and " + second + " are not legitimate "
                                      + "5-letter words from the dictionary");
                }
-            }
-            else
-            {
-               System.out.println("Invalid word pair.");
-            }
+//          }
+//            else
+//            {
+//               System.out.println("Invalid word pair.");
+//            }
             System.out.println("\n**********\n");
          }
-         System.out.println("End of file reached.");
       }
       catch (FileNotFoundException e) 
       {
@@ -121,7 +126,11 @@ public class A4Driver
          e.printStackTrace();
          System.exit(-1);
       }
+   timer.stop();
+   System.out.println("Elapsed time: " + timer.getElapsedTime()
+                      + " milliseconds");
    }
+
 
 /* //  public static void main(String[] args) {
       Dictionary dict = new Dictionary();
