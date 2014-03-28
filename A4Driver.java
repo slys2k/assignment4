@@ -54,11 +54,75 @@ public class A4Driver
          System.err.println ("Error: Incorrect number of command line arguments");
          System.exit(-1);
       }
-      
+
       // pass the dictionary filename to the Dictionary constructor
       // this constructor processes the file with a private class method
       Dictionary Dictionary = new Dictionary(args[1]);
-      
+
+      // process word pairs
+      try 
+      {
+         FileReader freader = new FileReader(args[0]);
+         BufferedReader reader = new BufferedReader(freader);
+
+         // for each line in the input file
+         for (String s = reader.readLine(); s != null; s = reader.readLine()) 
+         {
+            // separate the first word pair into individual strings
+            String[] WordPair = s.split("\\s+");
+            if(WordPair.length > 1)
+            {
+               String first = WordPair[0];
+               String second = WordPair[1];
+
+               // check for valid words
+               if(Dictionary.search(first, second))
+               {
+                  // this is where the recursion happens
+                  // SolutionList WordLadder = new SolutionList(first, second);
+                  if(true)
+                  {
+                     System.out.println("For the input words \"" + first + "\" "
+                                        + "and " + "\"" + second + "\" the "
+                                        + "following word ladder was found");
+                  //System.out.println(WordLadder);
+                  }
+                  else
+                  {
+                     System.out.println("For the input words \"" + first + "\" "
+                                        + "and " + "\"" + second + "\"\nThere "
+                                        + "is no word ladder between \"" + first
+                                        + "\" and " + "\"" + second + "\".");
+                  }
+               }
+               else // there are not two valid words
+               {
+                  System.out.println("At least one of the words " + first
+                                     + " and " + second + " are not legitimate "
+                                     + "5-letter words from the dictionary");
+               }
+            }
+            else
+            {
+               System.out.println("Invalid word pair.");
+            }
+            System.out.println("\n**********\n");
+         }
+         System.out.println("End of file reached.");
+      }
+      catch (FileNotFoundException e) 
+      {
+         System.err.println ("Error: File not found. Exiting...");
+         e.printStackTrace();
+         System.exit(-1);
+      } catch (IOException e) 
+      {
+         System.err.println ("Error: IO exception. Exiting...");
+         e.printStackTrace();
+         System.exit(-1);
+      }
+   }
+
 /* //  public static void main(String[] args) {
       Dictionary dict = new Dictionary();
       ArrayList<String> solList = new ArrayList<String>();
@@ -130,4 +194,4 @@ public class A4Driver
    }
 */
 }
-}
+

@@ -19,7 +19,7 @@ public class Dictionary
 
    /** The word list generated from the input file. 
      */
-   protected ArrayList<String> dictionary;
+   protected static ArrayList<String> dictionary;
 
    // Constants
 
@@ -86,27 +86,27 @@ public class Dictionary
      */
    public String getDictionaryElement(int index)
    {
-	   if(index < dictionary.size())
-	   {
-	      String word = dictionary.get(index);
-	      return word;
-	   }
-	return null;
+      if(index < dictionary.size())
+      {
+         String word = dictionary.get(index);
+         return word;
+      }
+   return null;
    }
 
    // Other Methods
 
-   /** Searches the Dictionary word list for the word provided to determine if
-     * the word is valid.
+   /** Searches the Dictionary word list for the two words provided to determine
+     * if the words are valid.
      * @param word The word that needs to be verified.
      * @return Returns true if the word matches a ditionary entry.
      */
-   public boolean search(String word)
+   public static boolean search(String first, String second)
    {
       boolean valid = false;
-      if(dictionary.contains(word))
+      if(dictionary.contains(first))
       {
-         valid = true;
+         if(dictionary.contains(second)) { valid = true; }
       }
       return valid;
    }
